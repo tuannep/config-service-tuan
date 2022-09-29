@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8061/eureka/
+      defaultZone: https://discovery-service-tuan.herokuapp.com/eureka/
       
 logging:
   pattern: 
