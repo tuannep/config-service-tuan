@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/tuannep/config-of-services.git
-#          search-paths: discovery-service
+          search-paths: discovery-service,department-service,employee-service,gateway-service
 #          username:
 #          password:
 
