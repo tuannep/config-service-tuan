@@ -18,14 +18,16 @@ spring:
           enabled: true
       routes:
       - id: employee-service
-        uri: lb://employee-service
+#        uri: lb://employee-service
+        uri: https://employee-service-tuan.herokuapp.com
         predicates:
         - Path=/employee/**
         filters:
         - RewritePath=/employee/(?<path>.*), /$\{path}
 #        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       - id: department-service
-        uri: lb://department-service
+#        uri: lb://department-service
+        uri: https://department-service-tuan.herokuapp.com
         predicates:
         - Path=/department/**
         filters:
