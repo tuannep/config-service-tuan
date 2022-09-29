@@ -23,24 +23,27 @@ spring:
         - Path=/employee/**
         filters:
         - RewritePath=/employee/(?<path>.*), /$\{path}
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       - id: department-service
         uri: lb://department-service
         predicates:
         - Path=/department/**
         filters:
         - RewritePath=/department/(?<path>.*), /$\{path}
-      - id: organization-service
-        uri: lb://organization-service
-        predicates:
-        - Path=/organization/**
-        filters:
-        - RewritePath=/organization/(?<path>.*), /$\{path}
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+#      - id: organization-service
+#        uri: lb://organization-service
+#        predicates:
+#        - Path=/organization/**
+#        filters:
+#        - RewritePath=/organization/(?<path>.*), /$\{path}
       - id: openapi
         uri: http://localhost:${server.port}
         predicates:
         - Path=/v3/api-docs/**
         filters:
         - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
 
 springdoc:
   swagger-ui:
