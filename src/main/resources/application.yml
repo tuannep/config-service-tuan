@@ -17,11 +17,11 @@ spring:
 #      password: ${PASSWORD:Bpm@2021}
     application:
       name: centralize-configuration
-#    profiles:
-#      active: default
+    profiles:
+      active: heroku
 #      password: Abcd@1234
 server:
-  port: 8888
+  port: 8088
 management:
   endpoint:
     metrics:
